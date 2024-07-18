@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('BuyShop', (Productname) => {
+    cy.get('h4.product-title.ng-binding').each(($el, index, $list) => {
+        if($el.text().includes('Productname'))
+         {  
+            cy.get('.btn-success').eq(index).click()
+         }
+})
+
+})
